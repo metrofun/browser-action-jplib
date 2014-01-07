@@ -10,7 +10,9 @@
 var lastHeight = 0;
 var lastWidth = 0;
 function updatePanelDimensions() {
-    let wrapper = document.documentElement;
+    // documentElement causes resize issues
+    // let wrapper = document.documentElement;
+    let wrapper = document.body;
     let height = wrapper.scrollHeight;
     let width = wrapper.scrollWidth;
     if (height === lastHeight && width === lastWidth) {
